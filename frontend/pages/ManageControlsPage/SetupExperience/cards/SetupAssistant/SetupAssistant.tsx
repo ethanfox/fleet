@@ -125,12 +125,14 @@ const SetupAssistant = ({
           </p>
           {enrollmentProfileNotFound || !enrollmentProfileData ? (
             <>
-              <SetupAssistantProfileCard
-                profile={
-                  defaultEnrollmentProfileData as IAppleSetupEnrollmentProfileResponse
-                }
-                defaultProfile
-              />
+              {defaultEnrollmentProfileData && (
+                <SetupAssistantProfileCard
+                  profile={
+                    defaultEnrollmentProfileData as IAppleSetupEnrollmentProfileResponse
+                  }
+                  defaultProfile
+                />
+              )}
               <SetupAssistantProfileUploader
                 currentTeamId={currentTeamId}
                 onUpload={onUpload}
